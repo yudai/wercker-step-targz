@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Environmental variables
-INPUT="$WERCKER_ZIP_INPUT"
-OUTPUT="$WERCKER_ZIP_OUTPUT"
+INPUT="$WERCKER_TARGZ_INPUT"
+OUTPUT="$WERCKER_TARGZ_OUTPUT"
 
 if [ -z "${INPUT}" ]; then
     fail "You need to set `input` directory where directories you want to package are in"
@@ -16,7 +16,7 @@ mkdir -p ${OUTPUT}
 for TARGET in $(find ${INPUT} -mindepth 1 -maxdepth 1 -type d); do
     ARCHIVE_NAME=$(basename ${TARGET})
     pushd ${TARGET}
-    zip -r ${OUTPUT}/${ARCHIVE_NAME}.zip ./*
+    tar zcvf ${OUTPUT}/${ARCHIVE_NAME}.tar.gz ./*
     popd
 done
 

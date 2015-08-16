@@ -1,3 +1,22 @@
+## 0.2.1 (2015-08-16)
+
+### Added
+
+- .tar.gz support
+
+### Deprecated
+
+- Nothing
+
+### Removed
+
+- .zip support
+
+### Fixed
+
+- Nothing
+
+
 ## 0.2.0 (2015-07-12)
 
 ### Added
